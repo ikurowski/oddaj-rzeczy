@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+
+  &__title {
+    font-size: $font-size-titles;
+    text-align: center;
+    white-space: nowrap;
+    line-height: $line-height-titles;
+
+    &::after {// FIXME czy te ozdobniki wpisywać na sztywno?
+      content: '';
+      display: block;
+      background-image: url('../../assets/Decoration.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin: 0 auto;
+      width: 40%;
+      height: 2.0625rem;
+    }
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    background-image: url('../../assets/Home-Hero-Image.jpg');
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 80vh;
+  }
+}

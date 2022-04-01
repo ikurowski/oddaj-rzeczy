@@ -1,12 +1,23 @@
 @import '../settings/colors';
 
-.btn {
+@mixin btn-base {
   text-decoration: none;
-  color: $color-neutral-2;
   padding: 0.5625rem 1.25rem;
-  border: 0.046875rem solid transparent;
+  border: 0.0469rem solid transparent;
+  cursor: pointer;
+  color: $color-neutral-2;
 }
-.btn:hover {
-  border: 0.046875rem solid $color-neutral-2;
 
+.btn {
+  @include btn-base();
+
+  &--large {
+    @include btn-base();
+
+    border: 0.0469rem solid $color-neutral-2;
+  }
+
+  &:hover {
+    border: 0.0469rem solid $color-neutral-2;
+  }
 }
