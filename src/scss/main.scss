@@ -1,4 +1,5 @@
-@import 'settings/reset.scss', 'settings/fonts', 'settings/colors';
+@import 'settings/reset.scss', 'settings/fonts', 'settings/colors', './buttons/buttons.scss', './components/navigation.scss';
+
 
 body {
   font-family: $font-base;
