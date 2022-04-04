@@ -1,6 +1,7 @@
 @import '../settings/colors';
 
 @mixin btn-base {
+  font-size: $font-size-button;
   text-decoration: none;
   padding: 0.5625rem 1.25rem;
   border: 0.0469rem solid transparent;
@@ -8,12 +9,40 @@
   color: $color-neutral-2;
 }
 
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
 .btn {
   @include btn-base();
+
+  &--login {
+    @include btn-base();
+
+    font-size: $font-size-button-medium;
+  }
+
+  &--register {
+    @include btn-base();
+
+    font-size: $font-size-button-medium;
+    border: 0.0469rem solid $color-secondary;
+  }
 
   &--large {
     @include btn-base();
 
+    display: flex;
+    padding: 1rem 4rem;
+    margin: 1rem;
+    flex-grow: 0;
+    flex-basis: 50%;
+    justify-content: center;
+    text-align: center;
+    font-weight: 300;
+    font-size: $font-size-button-large;
+    min-width: 25%;
     border: 0.0469rem solid $color-neutral-2;
   }
 
