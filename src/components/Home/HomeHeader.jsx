@@ -10,11 +10,15 @@ export default function Header() {
           <br />
           Oddaj niechciane rzeczy w zaufane ręce
         </h3>
-        <Link className="btn--large" to="/">ODDAJ RZECZY</Link>
-        <Link className="btn--large" to="/">ZORGANIZUJ ZBIÓRKĘ</Link>
-
+        <div className="buttons">
+          <Link className="btn--large" to="/">
+            ODDAJ RZECZY
+          </Link>
+          <Link className="btn--large" to="/">
+            ZORGANIZUJ ZBIÓRKĘ
+          </Link>
+        </div>
       </div>
-
     </header>
   );
 }
