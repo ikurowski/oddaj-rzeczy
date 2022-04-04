@@ -4,7 +4,6 @@
   &__title {
     font-size: $font-size-titles;
     text-align: center;
-    white-space: nowrap;
     line-height: $line-height-titles;
 
     &::after {// FIXME czy te ozdobniki wpisywać na sztywno?
@@ -14,9 +13,17 @@
       background-size: contain;
       background-repeat: no-repeat;
       margin: 0 auto;
-      width: 40%;
+      margin-top: 1rem;
+      margin-bottom: 4rem;
+      width: 36%;
       height: 2.0625rem;
     }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   &::before {
@@ -26,7 +33,7 @@
     background-size: cover;
     background-position: right;
     background-repeat: no-repeat;
-    width: 50%;
+    width: 45%;
     height: 80vh;
   }
 }
