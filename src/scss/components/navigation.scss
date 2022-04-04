@@ -1,6 +1,11 @@
 .navigation {
-  display: flex;
-  position: absolute;
-  top: 5rem;
-  right: 8rem;
+  position: fixed;
+  width: 100%;
+  top: 0.5rem;
+
+  &__menu {
+    display: flex;
+    justify-content: end;
+    padding: 0.9rem;
+  }
 }
