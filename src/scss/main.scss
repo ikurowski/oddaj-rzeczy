@@ -1,5 +1,12 @@
-@import 'settings/reset', 'settings/fonts', 'settings/colors', './buttons/buttons',
-  './components/navigation', './components/homeHeader';
+@import
+  'settings/reset',
+  'settings/fonts',
+  'settings/colors',
+  './buttons/buttons',
+  './components/navigation',
+  './components/homeHeader',
+  './components/homeThreeColumns',
+  './components/homeColumn';
 
 body {
   font-family: $font-base;

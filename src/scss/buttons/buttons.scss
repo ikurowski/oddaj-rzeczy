@@ -34,11 +34,12 @@
     @include btn-base();
 
     display: flex;
-    padding: 1rem 4rem;
+    padding: 1rem 8%;
     margin: 1rem;
     flex-grow: 0;
     flex-basis: 50%;
     justify-content: center;
+    align-items: center;
     text-align: center;
     font-weight: 300;
     font-size: $font-size-button-large;
