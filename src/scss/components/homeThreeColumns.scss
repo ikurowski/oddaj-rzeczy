@@ -1,0 +1,11 @@
+.three-columns {
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__columns {
+    padding: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
