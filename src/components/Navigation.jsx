@@ -6,17 +6,44 @@ import { Link as RouterLink } from 'react-router-dom';
 export default function Navigation() {
   return (
     <nav className="navigation">
-      <ul className="navigation__menu container">
-        <li><RouterLink to="/" className="btn--login">Zaloguj</RouterLink></li>
-        <li><RouterLink to="/" className="btn--register">Załóż konto</RouterLink></li>
+      <ul className="navigation__menu">
+        <li>
+          <RouterLink to="logowanie" className="btn--login">
+            Zaloguj
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink to="rejestracja" className="btn--register">
+            Załóż konto
+          </RouterLink>
+        </li>
       </ul>
-      {/* FIXME Dlaczego na te linki nie działa przełączanie tab? */}
-      <ul className="navigation__menu container">
-        <li><Link to="" smooth duration={500} className="btn">Start</Link></li>
-        <li><Link to="" smooth duration={500} className="btn">O co chodzi?</Link></li>
-        <li><Link to="" smooth duration={500} className="btn">O nas</Link></li>
-        <li><Link to="" smooth duration={500} className="btn">Fundacja i organizacje</Link></li>
-        <li><Link to="" smooth duration={500} className="btn">Kontakt</Link></li>
+      <ul className="navigation__menu">
+        <li>
+          <Link to="" smooth duration={500} tabIndex={0} className="btn">
+            Start
+          </Link>
+        </li>
+        <li>
+          <Link to="" smooth duration={500} tabIndex={0} className="btn">
+            O co chodzi?
+          </Link>
+        </li>
+        <li>
+          <Link to="" smooth duration={500} tabIndex={0} className="btn">
+            O nas
+          </Link>
+        </li>
+        <li>
+          <Link to="" smooth duration={500} tabIndex={0} className="btn">
+            Fundacja i organizacje
+          </Link>
+        </li>
+        <li>
+          <Link to="" smooth duration={500} tabIndex={0} className="btn">
+            Kontakt
+          </Link>
+        </li>
       </ul>
     </nav>
   );
