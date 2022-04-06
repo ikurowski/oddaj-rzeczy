@@ -1,7 +1,28 @@
+$z-index-below: -1;
+
 .navigation {
+  padding: 1rem 0;
+  background-color: $color-bg-light;
+  // box-shadow: #0003 0 3px 5px -1px;
   position: fixed;
   width: 100%;
-  top: 0.5rem;
+
+  &.shadow-out::before,
+  &%shadow {
+    content: '';
+    z-index: $z-index-below;
+    position: absolute;
+    inset: 0;
+    box-shadow: #0003 0 3px 5px -1px;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+
+  &.shadow-in::before {
+    @extend %shadow;
+
+    opacity: 1;
+  }
 
   &__menu {
     display: flex;

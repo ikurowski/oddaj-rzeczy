@@ -1,11 +1,20 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'react-scroll/modules/components/Link';
 import { Link as RouterLink } from 'react-router-dom';
 
 export default function Navigation() {
+  const [navigationShadow, setNavigationShadow] = useState(false);
+
+  const scrollBackground = () => (
+    window.scrollY >= 200 ? setNavigationShadow(true) : setNavigationShadow(false));
+
+  window.addEventListener('scroll', scrollBackground);
+
   return (
-    <nav className="navigation">
+    <nav
+      className={`navigation ${navigationShadow ? 'shadow-in' : 'shadow-out'}`}
+    >
       <ul className="navigation__menu">
         <li>
           <RouterLink to="logowanie" className="btn--login">
@@ -46,5 +55,6 @@ export default function Navigation() {
         </li>
       </ul>
     </nav>
+
   );
 }
