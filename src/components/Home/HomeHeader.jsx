@@ -1,20 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ButtonLarge from '../ButtonLarge';
 
 export default function Header() {
   return (
-    <header className="header container">
+    <header className="header">
       <div className="header__container">
-        <h3 className="header__title">
+        <h1 className="header__title">
           Zacznij pomagać!
-          <br />
-          Oddaj niechciane rzeczy w zaufane ręce
-        </h3>
+          <h1>Oddaj niechciane rzeczy w zaufane ręce</h1>
+        </h1>
         <div className="buttons">
-          <Link className="btn--large" to="/">
-            ODDAJ RZECZY
-          </Link>
-          <Link className="btn--large" to="/">
+          <ButtonLarge />
+          <Link className="btn--large" to="rejestracja">
             ZORGANIZUJ ZBIÓRKĘ
           </Link>
         </div>
