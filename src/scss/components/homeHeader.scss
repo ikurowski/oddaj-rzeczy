@@ -1,12 +1,15 @@
 .header {
   display: flex;
+  justify-content: center;
+  margin-right: 4rem;
 
   &__title {
-    font-size: $font-size-titles;
+    margin-top: 5rem;
+    font-size: $font-size-title-large;
     text-align: center;
     line-height: $line-height-titles;
 
-    &::after {// FIXME czy te ozdobniki wpisywać na sztywno?
+    &::after {
       content: '';
       display: block;
       background-image: url('../../assets/Decoration.svg');
@@ -15,7 +18,7 @@
       margin: 0 auto;
       margin-top: 1rem;
       margin-bottom: 4rem;
-      width: 36%;
+      width: 15.5rem;
       height: 2.0625rem;
     }
   }
@@ -33,7 +36,7 @@
     background-size: cover;
     background-position: right;
     background-repeat: no-repeat;
-    width: 45%;
-    height: 80vh;
+    width: 50%;
+    height: 60rem;
   }
 }

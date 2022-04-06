@@ -1,0 +1,27 @@
+.home-column {
+  display: flex;
+  margin-bottom: 3rem;
+  width: 30%;
+  max-width: 22rem;
+  gap: 1rem;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $color-neutral-2;
+
+  &__number {
+    font-size: $font-size-big-number;
+    font-weight: 300;
+  }
+
+  &__title {
+    font-size: $font-size-title-medium;
+  }
+
+  &__text {
+    font-size: $font-size-text;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+}
