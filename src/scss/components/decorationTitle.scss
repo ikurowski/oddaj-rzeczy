@@ -1,0 +1,19 @@
+.decoration-title {
+  margin-top: 5rem;
+  font-size: $font-size-title-large;
+  text-align: center;
+  line-height: $line-height-titles;
+
+  &::after {
+    content: '';
+    display: block;
+    background-image: url('../../assets/Decoration.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    width: 15.5rem;
+    height: 2.0625rem;
+  }
+}
