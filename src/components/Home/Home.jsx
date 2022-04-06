@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './HomeHeader';
+import HomeSimpleSteps from './HomeSimpleSteps';
 import HomeThreeColumns from './HomeThreeColumns/HomeThreeColumns';
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <>
       <Header />
       <HomeThreeColumns />
+      <HomeSimpleSteps />
     </>
 
   );
