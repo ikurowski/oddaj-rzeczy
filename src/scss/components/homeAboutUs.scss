@@ -1,0 +1,33 @@
+.about-us {
+  display: flex;
+  background-color: $color-primary-light;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__description {
+    font-size: $font-size-title-medium-large;
+    line-height: 2;
+    max-width: 50%;
+
+    &::after {
+      content: '';
+      background-image: url('../../assets/Signature.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-left: auto;
+      display: block;
+      width: 12rem;
+      height: 8rem;
+    }
+  }
+
+  &__photo {
+    max-width: 50%;
+  }
+}
