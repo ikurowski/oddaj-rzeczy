@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export default function ButtonLarge({ text = '' }) {
   return (
-    <Link className="btn--large" to="rejestracja">
+    <Link className="btn--large" to="logowanie">
       {text}
     </Link>
   );
