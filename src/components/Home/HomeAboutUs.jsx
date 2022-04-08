@@ -1,6 +1,5 @@
 import React from 'react';
 import DecorationTitle from '../DecorationTitle';
-import AboutUsPhoto from '../../assets/People.jpg';
 
 export default function HomeAboutUs() {
   return (
@@ -12,8 +11,6 @@ export default function HomeAboutUs() {
           nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.
         </p>
       </div>
-
-      <img className="about-us__photo" src={AboutUsPhoto} alt="people standing in a circle" />
     </section>
   );
 }

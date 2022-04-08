@@ -7,7 +7,6 @@ export default function HomeColumn({ number, title, text }) {
 
       <p className="home-column__number">{number}</p>
       <p className="home-column__title">{title}</p>
-      {/* FIXME może h3 tu? */}
       <p className="home-column__text">{text}</p>
     </div>
   );

@@ -1,16 +1,18 @@
 @mixin btn-base {
   font-size: $font-size-button;
+  background-color: $color-bg-light;
   text-decoration: none;
   padding: 0.5625rem 1.25rem;
-  border: 0.0469rem solid transparent;
+  border: 1px solid transparent;
   cursor: pointer;
   color: $color-neutral-2;
 }
 
 .buttons {
   display: flex;
-  gap: 1rem;
-  justify-content: space-between;
+  gap: 1.5rem;
+  justify-content: center;
+  margin: 0 2rem;
 }
 
 .btn {
@@ -26,27 +28,64 @@
     @include btn-base();
 
     font-size: $font-size-button-medium;
-    border: 0.0469rem solid $color-secondary;
+    border: 1px solid $color-secondary;
   }
 
   &--large {
     @include btn-base();
 
     display: flex;
-    padding: 1rem 8rem;
-    margin: 4rem auto;
-    flex-grow: 0;
     flex-basis: 50%;
+    flex-shrink: 1;
+    padding: 1rem 2rem;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-weight: 300;
     font-size: $font-size-button-large;
-    max-width: 4rem;
-    border: 0.0469rem solid $color-neutral-2;
+    max-width: 15rem;
+    min-width: 10rem;
+    border: 1px solid $color-neutral-2;
   }
 
   &:hover {
-    border: 0.0469rem solid $color-neutral-2;
+    border: 1px solid $color-neutral-2;
+  }
+
+  &__pagination {
+    @include btn-base();
+
+    display: inline-block;
+
+    &--active {
+      border: 1px solid $color-neutral-2;
+    }
+  }
+
+  &__who-We-Help {
+    @include btn-base();
+
+    display: flex;
+    flex-grow: 0;
+    flex-basis: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: $font-size-button-medium-large;
+    min-width: 6rem;
+    max-width: 14rem;
+
+    &--toggle {
+      @include btn-base();
+
+      display: flex;
+      flex-grow: 0;
+      flex-basis: 50%;
+      justify-content: center;
+      align-items: center;
+      font-size: $font-size-button-medium-large;
+      border: 1px solid $color-neutral-2;
+      min-width: 6rem;
+      max-width: 14rem;
+    }
   }
 }

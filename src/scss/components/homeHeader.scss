@@ -1,12 +1,11 @@
 .header {
   display: flex;
-  justify-content: center;
-  margin-right: 4rem;
 
   &__container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-width: 50%;
   }
 
   &::before {
@@ -16,7 +15,7 @@
     background-size: cover;
     background-position: right;
     background-repeat: no-repeat;
-    width: 50%;
+    min-width: 50%;
     height: 60rem;
   }
 }

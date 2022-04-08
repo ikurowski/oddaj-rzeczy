@@ -1,11 +1,11 @@
 import React from 'react';
 import DecorationTitle from '../../DecorationTitle';
 import HomeSimpleStepsColumn from './HomeSimpleStepsColumn';
+import ButtonLarge from '../../ButtonLarge';
 import IconShirt from '../../../assets/Icon-1.svg';
 import IconPackage from '../../../assets/Icon-2.svg';
 import IconGlass from '../../../assets/Icon-3.svg';
 import IconCircledArrows from '../../../assets/Icon-4.svg';
-import ButtonLarge from '../../ButtonLarge';
 
 export default function HomeSimpleSteps() {
   return (
@@ -37,7 +37,10 @@ export default function HomeSimpleSteps() {
           secondText="kurier przyjedzie w dogodnym terminie"
         />
       </div>
-      <ButtonLarge text="ODDAJ RZECZY" />
+      <div className="buttons">
+        <ButtonLarge text="ODDAJ RZECZY" />
+      </div>
+
     </section>
   );
 }

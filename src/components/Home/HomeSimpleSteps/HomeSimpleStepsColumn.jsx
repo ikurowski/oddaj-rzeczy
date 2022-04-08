@@ -9,7 +9,6 @@ export default function HomeSimpleStepsColumn({
 }) {
   return (
     <div className="simple-steps__column">
-      {/* FIXME wartość props do before'a? */}
       <img src={imgSrc} alt={imgAlt} />
       <p className="simple-steps__column--title">{firstText}</p>
       <p>{secondText}</p>

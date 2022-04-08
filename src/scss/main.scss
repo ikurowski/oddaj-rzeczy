@@ -9,7 +9,8 @@
   './components/homeColumn',
   './components/decorationTitle',
   './components/homeSimpleSteps',
-  './components/homeAboutUs';
+  './components/homeAboutUs',
+  './components/homeWhoWeHelp';
 
 body {
   font-family: $font-base;
@@ -19,4 +20,8 @@ body {
 .container {
   max-width: 1252px;
   margin: 0 auto;
+}
+
+.hide {
+  display: none;
 }
