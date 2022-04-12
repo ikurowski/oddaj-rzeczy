@@ -62,6 +62,19 @@
     }
   }
 
+  &__submit {
+    @include btn-base();
+
+    margin-top: 1rem;
+    background-color: transparent;
+    border: 1px solid $color-neutral-2;
+    margin-left: auto;
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
   &__who-We-Help {
     @include btn-base();
 
@@ -73,6 +86,10 @@
     font-size: $font-size-button-medium-large;
     min-width: 6rem;
     max-width: 14rem;
+
+    &:active {
+      transform: scale(0.9);
+    }
 
     &--toggle {
       @include btn-base();
