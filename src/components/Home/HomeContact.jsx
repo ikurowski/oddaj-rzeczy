@@ -66,7 +66,7 @@ export default function HomeContact() {
             variant="standard"
             multiline
             color="error"
-            rows={2}
+            rows={3}
             placeholder="Lorem Lorem Lorem Lorem
           Lorem Lorem Lorem Lorem Lorem Lorem Lorem
           Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
@@ -85,9 +85,7 @@ export default function HomeContact() {
           <div className="contact__icons">
             <a className="contact__icon" href="https://www.facebook.com/">
               <img src={facebook} alt="facebook icon" />
-
             </a>
-
             <a className="contact__icon" href="https://www.instagram.com/">
               <img src={instagram} alt="instagram icon" />
             </a>
