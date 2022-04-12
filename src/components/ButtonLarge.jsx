@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-export default function ButtonLarge({ text = '' }) {
+export default function ButtonLarge({ text = '', link = 'logowanie' }) {
   return (
-    <Link className="btn--large" to="logowanie">
+    <Link className="btn--large" to={link}>
       {text}
     </Link>
   );
@@ -12,4 +12,9 @@ export default function ButtonLarge({ text = '' }) {
 
 ButtonLarge.propTypes = {
   text: PropTypes.string.isRequired,
+  link: PropTypes.string,
+};
+
+ButtonLarge.defaultProps = {
+  link: 'logowanie',
 };
