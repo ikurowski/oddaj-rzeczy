@@ -29,27 +29,27 @@ export default function Navigation() {
       </ul>
       <ul className="navigation__menu">
         <li>
-          <Link to="" smooth duration={500} tabIndex={0} className="btn">
+          <Link to="home" smooth duration={500} tabIndex={0} className="btn">
             Start
           </Link>
         </li>
         <li>
-          <Link to="" smooth duration={500} tabIndex={0} className="btn">
+          <Link to="simple-steps" offset={-200} smooth duration={500} tabIndex={0} className="btn">
             O co chodzi?
           </Link>
         </li>
         <li>
-          <Link to="" smooth duration={500} tabIndex={0} className="btn">
+          <Link to="about-us" offset={-130} smooth duration={500} tabIndex={0} className="btn">
             O nas
           </Link>
         </li>
         <li>
-          <Link to="" smooth duration={500} tabIndex={0} className="btn">
+          <Link to="who-we-help" offset={-200} smooth duration={500} tabIndex={0} className="btn">
             Fundacja i organizacje
           </Link>
         </li>
         <li>
-          <Link to="" smooth duration={500} tabIndex={0} className="btn">
+          <Link to="contact" offset={-200} smooth duration={500} tabIndex={0} className="btn">
             Kontakt
           </Link>
         </li>

@@ -4,7 +4,7 @@ import ButtonLarge from '../ButtonLarge';
 
 export default function Header() {
   return (
-    <header className="header">
+    <header id="home" className="header">
       <div className="header__container">
         <DecorationTitle firstText="Zacznij pomagać!" secondText="Oddaj niechciane rzeczy w zaufane ręce" />
         <div className="buttons">
