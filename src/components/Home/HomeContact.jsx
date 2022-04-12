@@ -4,6 +4,8 @@ import React from 'react';
 import theme from '../../theme';
 import formValidationSchema from '../../yupValidationSchema';
 import DecorationTitle from '../DecorationTitle';
+import facebook from '../../assets/Facebook.svg';
+import instagram from '../../assets/Instagram.svg';
 
 const INITIAL_FORM_STATE = {
   name: '',
@@ -22,11 +24,11 @@ export default function HomeContact() {
 
   return (
     <ThemeProvider theme={theme}>
-      <section className="home-contact">
-        <div className="home-contact__picture" />
-        <form className="home-contact__form" onSubmit={formik.handleSubmit}>
+      <section className="contact">
+        <div className="contact__picture" />
+        <form className="contact__form" onSubmit={formik.handleSubmit}>
           <DecorationTitle firstText="Skontaktuj się z nami" />
-          <div className="home-contact__container">
+          <div className="contact__container">
             <TextField
               sx={{ width: '48%' }}
               id="name field"
@@ -78,6 +80,21 @@ export default function HomeContact() {
             Wyślij
           </button>
         </form>
+        <footer className="contact__footer">
+          Copyright by Coders Lab
+          <div className="contact__icons">
+            <a className="contact__icon" href="https://www.facebook.com/">
+              <img src={facebook} alt="facebook icon" />
+
+            </a>
+
+            <a className="contact__icon" href="https://www.instagram.com/">
+              <img src={instagram} alt="instagram icon" />
+            </a>
+
+          </div>
+
+        </footer>
       </section>
     </ThemeProvider>
   );

@@ -1,4 +1,4 @@
-.home-contact {
+.contact {
   position: relative;
 
   &__container {
@@ -33,5 +33,26 @@
     z-index: $z-index-middle;
     top: 0;
     right: 10%;
+  }
+
+  &__footer {
+    margin: 1rem 0;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__icons {
+    margin-right: 2rem;
+    transform: translateY(25%);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  &__icon {
+    margin-left: 1.2rem;
   }
 }
