@@ -1,23 +1,51 @@
+import React, { useState } from 'react';
+import axios from 'axios';
 import { TextField, ThemeProvider } from '@mui/material';
 import { useFormik } from 'formik';
-import React from 'react';
 import theme from '../../theme';
 import formValidationSchema from '../../yupValidationSchema';
 import DecorationTitle from '../DecorationTitle';
 import facebook from '../../assets/Facebook.svg';
 import instagram from '../../assets/Instagram.svg';
 
+const url = 'https://fer-api.coderslab.pl/v1/portfolio/contact';
+
 const INITIAL_FORM_STATE = {
   name: '',
   email: '',
-  text: '',
+  message: '',
 };
 
 export default function HomeContact() {
+  const [success, setSuccess] = useState(false);
+
   const formik = useFormik({
     initialValues: INITIAL_FORM_STATE,
-    onSubmit: (/* values */) => {
-      // FIXME formValues(values.name, values.email, values.text);
+    onSubmit: async (values) => {
+      try {
+        await axios.post(
+          url,
+          {
+            name: values.name,
+            email: values.email,
+            message: values.message,
+          },
+          {
+            'Content-Type': 'application/json',
+          },
+        ).then((response) => { // FIXME testy
+          console.log(response.data);
+          console.log(response.status);
+          console.log(response.statusText);
+          console.log(response.headers);
+          console.log(response.config);
+        });
+        setSuccess(true);
+        formik.resetForm();
+      } catch (error) {
+        console.log(error);
+        alert('Spróbuj jeszcze raz.');
+      }
     },
     validationSchema: formValidationSchema,
   });
@@ -28,6 +56,12 @@ export default function HomeContact() {
         <div className="contact__picture" />
         <form className="contact__form" onSubmit={formik.handleSubmit}>
           <DecorationTitle firstText="Skontaktuj się z nami" />
+          {success && (
+          <h4 className="contact__success-message">
+            Wiadomość została wysłana!
+            <p> Wkrótce się skontaktujemy.</p>
+          </h4>
+          )}
           <div className="contact__container">
             <TextField
               sx={{ width: '48%' }}
@@ -57,11 +91,11 @@ export default function HomeContact() {
             />
           </div>
           <TextField
-            id="text field"
+            id="message field"
             sx={{
               mt: '2rem',
             }}
-            name="text"
+            name="message"
             label="Wpisz swoją wiadomość"
             variant="standard"
             multiline
@@ -71,15 +105,16 @@ export default function HomeContact() {
           Lorem Lorem Lorem Lorem Lorem Lorem Lorem
           Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
           Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem"
-            value={formik.values.text}
+            value={formik.values.message}
             onChange={formik.handleChange}
-            error={formik.touched.text && Boolean(formik.errors.text)}
-            helperText={formik.touched.text && formik.errors.text}
+            error={formik.touched.message && Boolean(formik.errors.message)}
+            helperText={formik.touched.message && formik.errors.message}
           />
           <button className="btn__submit" type="submit">
             Wyślij
           </button>
         </form>
+
         <footer className="contact__footer">
           Copyright by Coders Lab
           <div className="contact__icons">
@@ -89,9 +124,7 @@ export default function HomeContact() {
             <a className="contact__icon" href="https://www.instagram.com/">
               <img src={instagram} alt="instagram icon" />
             </a>
-
           </div>
-
         </footer>
       </section>
     </ThemeProvider>

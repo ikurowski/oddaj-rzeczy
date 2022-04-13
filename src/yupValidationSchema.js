@@ -5,7 +5,7 @@ const formValidationSchema = Yup.object({
   name: Yup.string()
     .matches(/^[\p{L}]+$/u, 'Wpisz poprawne imię')
     .required('Imię wymagane'),
-  text: Yup.string()
+  message: Yup.string()
     .required('Wpisz wiadomość')
     .min(120, 'Wiadomość powinna mieć co najmniej 120 znaków'),
 });
