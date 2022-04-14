@@ -65,7 +65,7 @@ export default function HomeWhoWeHelp() {
   }
 
   return (
-    <section className="who-we-help">
+    <section id="who-we-help" className="who-we-help">
       <DecorationTitle firstText="Komu pomagamy?" />
       <div className="who-we-help__container">
         <div className="buttons">

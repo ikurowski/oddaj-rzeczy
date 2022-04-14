@@ -3,7 +3,7 @@ import axios from 'axios';
 import { TextField, ThemeProvider } from '@mui/material';
 import { useFormik } from 'formik';
 import theme from '../../theme';
-import formValidationSchema from '../../yupValidationSchema';
+import { formValidationSchema } from '../../yupValidationSchema';
 import DecorationTitle from '../DecorationTitle';
 import facebook from '../../assets/Facebook.svg';
 import instagram from '../../assets/Instagram.svg';
@@ -52,7 +52,7 @@ export default function HomeContact() {
 
   return (
     <ThemeProvider theme={theme}>
-      <section className="contact">
+      <section id="contact" className="contact">
         <div className="contact__picture" />
         <form className="contact__form" onSubmit={formik.handleSubmit}>
           <DecorationTitle firstText="Skontaktuj się z nami" />
@@ -110,7 +110,7 @@ export default function HomeContact() {
             error={formik.touched.message && Boolean(formik.errors.message)}
             helperText={formik.touched.message && formik.errors.message}
           />
-          <button className="btn__submit" type="submit">
+          <button style={{ marginLeft: 'auto', marginTop: '1rem' }} className="btn__submit" type="submit">
             Wyślij
           </button>
         </form>

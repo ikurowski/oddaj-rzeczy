@@ -3,7 +3,7 @@ import DecorationTitle from '../DecorationTitle';
 
 export default function HomeAboutUs() {
   return (
-    <section className="about-us">
+    <section id="about-us" className="about-us">
       <div className="about-us__info">
         <DecorationTitle firstText="O nas" />
         <p className="about-us__description">

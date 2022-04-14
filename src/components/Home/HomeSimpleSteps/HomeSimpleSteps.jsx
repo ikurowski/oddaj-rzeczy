@@ -9,7 +9,7 @@ import IconCircledArrows from '../../../assets/Icon-4.svg';
 
 export default function HomeSimpleSteps() {
   return (
-    <section className="simple-steps">
+    <section id="simple-steps" className="simple-steps">
       <DecorationTitle firstText="Wystarczą 4 proste kroki" />
       <div className="simple-steps__columns">
         <HomeSimpleStepsColumn
