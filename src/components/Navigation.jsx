@@ -1,10 +1,28 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
-import Link from 'react-scroll/modules/components/Link';
 import { Link as RouterLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { HashLink } from 'react-router-hash-link';
+import { auth, logOut } from '../firebase';
 
-export default function Navigation() {
+export default function Navigation({ position = 'fixed' }) {
   const [navigationShadow, setNavigationShadow] = useState(false);
+
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      setLoggedIn(true);
+    } else {
+      setLoggedIn(false);
+    }
+  });
+
+  const scrollWithOffset = (el, offset) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = offset;
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+  };
 
   const scrollBackground = () => (
     window.scrollY >= 200 ? setNavigationShadow(true) : setNavigationShadow(false));
@@ -13,48 +31,89 @@ export default function Navigation() {
 
   return (
     <nav
+      style={{ position }}
       className={`navigation ${navigationShadow ? 'shadow-in' : 'shadow-out'}`}
     >
       <ul className="navigation__menu">
         <li>
-          <RouterLink to="logowanie" className="btn--login">
-            Zaloguj
-          </RouterLink>
+          {loggedIn ? (
+            <RouterLink to="/" className="btn--login">
+              {auth.currentUser?.email}
+            </RouterLink>
+          ) : (
+            <RouterLink to="/logowanie" className="btn--login">
+              Zaloguj
+            </RouterLink>
+          )}
         </li>
         <li>
-          <RouterLink to="rejestracja" className="btn--register">
-            Załóż konto
-          </RouterLink>
+          {loggedIn ? (
+            <RouterLink to="/wylogowano" onClick={() => logOut()} className="btn--register">
+              Wyloguj
+            </RouterLink>
+          ) : (
+            <RouterLink to="/rejestracja" className="btn--register">
+              Załóż konto
+            </RouterLink>
+          )}
         </li>
       </ul>
       <ul className="navigation__menu">
         <li>
-          <Link to="home" smooth duration={500} tabIndex={0} className="btn">
+          <HashLink to="/#home" smooth duration={500} tabIndex={0} className="btn">
             Start
-          </Link>
+          </HashLink>
         </li>
         <li>
-          <Link to="simple-steps" offset={-200} smooth duration={500} tabIndex={0} className="btn">
+          <HashLink
+            to="/#simple-steps"
+            scroll={(el) => scrollWithOffset(el, -200)}
+            smooth
+            duration={500}
+            tabIndex={0}
+            className="btn"
+          >
             O co chodzi?
-          </Link>
+          </HashLink>
         </li>
         <li>
-          <Link to="about-us" offset={-130} smooth duration={500} tabIndex={0} className="btn">
+          <HashLink to="/#about-us" smooth duration={500} tabIndex={0} className="btn">
             O nas
-          </Link>
+          </HashLink>
         </li>
         <li>
-          <Link to="who-we-help" offset={-200} smooth duration={500} tabIndex={0} className="btn">
+          <HashLink
+            to="/#who-we-help"
+            scroll={(el) => scrollWithOffset(el, -150)}
+            smooth
+            duration={500}
+            tabIndex={0}
+            className="btn"
+          >
             Fundacja i organizacje
-          </Link>
+          </HashLink>
         </li>
         <li>
-          <Link to="contact" offset={-200} smooth duration={500} tabIndex={0} className="btn">
+          <HashLink
+            to="/#contact"
+            scroll={(el) => scrollWithOffset(el, -200)}
+            smooth
+            duration={500}
+            tabIndex={0}
+            className="btn"
+          >
             Kontakt
-          </Link>
+          </HashLink>
         </li>
       </ul>
     </nav>
-
   );
 }
+
+Navigation.propTypes = {
+  position: PropTypes.string,
+};
+
+Navigation.defaultProps = {
+  position: 'fixed',
+};

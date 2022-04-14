@@ -5,10 +5,12 @@ import SignUp from './components/SignUp';
 import Login from './components/Login';
 import ErrorPage from './components/ErrorPage';
 import Logout from './components/Logout';
+import Navigation from './components/Navigation';
 
 function App() {
   return (
     <Router>
+      <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="rejestracja" element={<SignUp />} />
