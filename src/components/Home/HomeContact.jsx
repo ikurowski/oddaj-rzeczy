@@ -107,9 +107,9 @@ export default function HomeContact() {
             multiline
             color="error"
             rows={3}
-            placeholder="Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
-            Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
-             Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem"
+            placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in"
             value={formik.values.message}
             onChange={formik.handleChange}
             error={formik.touched.message && Boolean(formik.errors.message)}

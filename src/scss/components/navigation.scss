@@ -28,7 +28,7 @@ $z-index-above: 2;
 
   &__menu {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     margin-top: 0.3rem;
     margin-right: 2rem;
     padding: 0.9rem;
