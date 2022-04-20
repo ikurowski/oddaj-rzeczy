@@ -23,23 +23,26 @@ export default function HomeContact() {
     initialValues: INITIAL_FORM_STATE,
     onSubmit: async (values) => {
       try {
-        await axios.post(
-          url,
-          {
-            name: values.name,
-            email: values.email,
-            message: values.message,
-          },
-          {
-            'Content-Type': 'application/json',
-          },
-        ).then((response) => { // FIXME testy
-          console.log(response.data);
-          console.log(response.status);
-          console.log(response.statusText);
-          console.log(response.headers);
-          console.log(response.config);
-        });
+        await axios
+          .post(
+            url,
+            {
+              name: values.name,
+              email: values.email,
+              message: values.message,
+            },
+            {
+              'Content-Type': 'application/json',
+            },
+          )
+          .then((response) => {
+            // FIXME testy
+            console.log(response.data);
+            console.log(response.status);
+            console.log(response.statusText);
+            console.log(response.headers);
+            console.log(response.config);
+          });
         setSuccess(true);
         formik.resetForm();
       } catch (error) {
@@ -57,10 +60,10 @@ export default function HomeContact() {
         <form className="contact__form" onSubmit={formik.handleSubmit}>
           <DecorationTitle firstText="Skontaktuj się z nami" />
           {success && (
-          <h4 className="contact__success-message">
-            Wiadomość została wysłana!
-            <p> Wkrótce się skontaktujemy.</p>
-          </h4>
+            <h4 className="contact__success-message">
+              Wiadomość została wysłana!
+              <p> Wkrótce się skontaktujemy.</p>
+            </h4>
           )}
           <div className="contact__container">
             <TextField
@@ -101,20 +104,22 @@ export default function HomeContact() {
             multiline
             color="error"
             rows={3}
-            placeholder="Lorem Lorem Lorem Lorem
-          Lorem Lorem Lorem Lorem Lorem Lorem Lorem
-          Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
-          Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem"
+            placeholder="Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+            Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+             Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem"
             value={formik.values.message}
             onChange={formik.handleChange}
             error={formik.touched.message && Boolean(formik.errors.message)}
             helperText={formik.touched.message && formik.errors.message}
           />
-          <button style={{ marginLeft: 'auto', marginTop: '1rem' }} className="btn__submit" type="submit">
+          <button
+            style={{ marginLeft: 'auto', marginTop: '1rem' }}
+            className="btn__submit"
+            type="submit"
+          >
             Wyślij
           </button>
         </form>
-
         <footer className="contact__footer">
           Copyright by Coders Lab
           <div className="contact__icons">
