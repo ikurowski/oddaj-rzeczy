@@ -7,6 +7,7 @@ The project is a website with a simple form that will make it easier for users t
 # Links 🔗
 
 https://github.com/ikurowski/oddaj-rzeczy <br />
+https://charity-oddaj-rzeczy-ik.netlify.app/ 
 
 # Technologies 📡
 
